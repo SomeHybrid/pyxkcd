@@ -15,6 +15,9 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: '3.x'
+        python-version: '3.11'
     - name: Install dependencies
+      run: python -m pip install httpx
+    
+    - name: Run tests
       run: python tests.py
