@@ -1,8 +1,6 @@
 name: Unit testing
 
-on:
-  release:
-    types: [published]
+on: [push]
 
 permissions:
   contents: read
