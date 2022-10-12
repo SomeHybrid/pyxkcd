@@ -6,7 +6,7 @@ A simple, easy-to-use xkcd wrapper
 
 ## Documentation
 
-Coming soon™
+Check the documentation [here](https://pyxkcd.readthedocs.io/en/latest/)
 
 ## Quickstart
 
