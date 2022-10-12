@@ -25,7 +25,7 @@ class Tests(unittest.TestCase):
         self.assertNotEqual(latest_xkcd, other_xkcd)
 
         xkcd1 = client.get(1)  # hardcoded test case
-        resp = xkcd.Response(xkcd1.raw())
+        resp = xkcd.Response(xkcd1.response)
         self.assertEqual(xkcd1, resp)
 
 
