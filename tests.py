@@ -27,7 +27,8 @@ class Tests(unittest.TestCase):
         xkcd1 = client.get(1)  # hardcoded test case
         resp = xkcd.Response(xkcd1.raw())
         self.assertEqual(xkcd1, resp)
-        
+
+
 if __name__ == "__main__":
     client = xkcd.Client()
     unittest.main()

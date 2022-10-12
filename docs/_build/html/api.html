@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Reference</title> 
+  <!-- end extra head -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+  <link rel="stylesheet" type="text/css" href="_static/basic.css" />
+  <link rel="stylesheet" href="_static/style.css" type="text/css" />
+  <link rel="stylesheet" href="_static/codeblocks.css" type="text/css" />
+  <link rel="stylesheet" href="_static/icons.css" type="text/css" />
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  <script type="text/javascript">
+    var DPY_TRANSLATIONS = {
+      copy_code: "Copy Code",
+      copy_code_error: "Could not copy codeblock:",
+    }
+  </script>
+  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+  <script src="_static/jquery.js"></script>
+  <script src="_static/underscore.js"></script>
+  <script src="_static/doctools.js"></script>
+  <script src="_static/custom.js"></script>
+  <script src="_static/settings.js"></script>
+  <script src="_static/copy.js"></script>
+  <script src="_static/sidebar.js"></script>
+  <link rel="index" title="Index" href="genindex.html" />
+  <link rel="search" title="Search" href="search.html" />
+  <link rel="prev" title="Welcome to pyxkcd’s documentation!" href="index.html" />
+</head>
+<body>
+  <div class="main-grid">
+    <header class="grid-item">
+      <nav>
+        <a href="index.html" class="main-heading">pyxkcd</a>
+        <a href="https://github.com/SomeHybrid/pyxkcd" title="GitHub"><span class="material-icons custom-icons">github</span></a>
+        <a onclick="mobileSearch.open();" title="Search" id="open-search" class="mobile-only"><span class="material-icons">search</span></a>
+        <a onclick="mobileSearch.close();" title="Close" id="close-search" class="mobile-only" hidden><span class="material-icons">close</span></a>
+      </nav>
+      <nav class="mobile-only">
+        <form role="search" class="search" action="search.html" method="get">
+          <div class="search-wrapper">
+            <input type="search" name="q" placeholder="Search documentation" />
+            <button type="submit">
+              <span class="material-icons">search</span>
+            </button>
+          </div>
+        </form>
+      </nav>
+    </header>
+    <div class="sub-header grid-item">
+      <label for="documentation_select">View Documentation For</label>
+      <select id="documentation_select" onchange="window.location = this.value;">
+        <option value="#" selected>pyxkcd</option>
+      </select>
+      <form id="search-form" role="search" class="search" action="search.html" method="get">
+        <div class="search-wrapper">
+          <input type="search" name="q" placeholder="Search documentation" />
+          <button type="submit
+" onmousedown="searchBarClick(event, document.getElementById('search-form'));">
+            <span class="material-icons">search</span>
+          </button>
+        </div>
+      </form>
+      <a accesskey="S" class="settings" onclick="settingsModal.open();"><span class="material-icons">settings</span></a>
+    </div>
+    <aside class="grid-item">
+      <span id="hamburger-toggle">
+        <span class="material-icons">menu</span>
+      </span>
+      <span id="settings-toggle" class="settings" onclick="settingsModal.open();">
+        <span class="material-icons">settings</span>
+      </span>
+      <div id="sidebar">
+        <form id="sidebar-form" role="search" class="search" action="search.html" method="get">
+        <div class="search-wrapper search-sidebar">
+          <input type="search" name="q" placeholder="Search documentation" />
+          <button type="submit" onmousedown="searchBarClick(event, document.getElementById('sidebar-form'));">
+            <span class="material-icons">search</span>
+          </button>
+        </div>
+      </form>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">API Reference</a><ul>
+<li><a class="reference internal" href="#version-related-info">Version Related Info</a></li>
+<li><a class="reference internal" href="#clients">Clients</a><ul>
+<li><a class="reference internal" href="#client">Client</a></li>
+<li><a class="reference internal" href="#asyncclient">AsyncClient</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#comic">Comic</a></li>
+<li><a class="reference internal" href="#image">Image</a></li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a><ul>
+<li><a class="reference internal" href="#exception-hierarchy">Exception Hierarchy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+      </div>
+    </aside>
+    <main class="grid-item" role="main">
+      
+  <section id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<p>The following section outlines the API of pyxkcd.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you get a ModuleNotFoundError when trying to import pyxkcd, check <a class="reference internal" href="installation.html"><span class="doc">Installation</span></a></p>
+</div>
+<section id="version-related-info">
+<h2>Version Related Info<a class="headerlink" href="#version-related-info" title="Permalink to this headline">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="xkcd.__version__">
+<span class="sig-prename descclassname"><span class="pre">xkcd.</span></span><span class="sig-name descname"><span class="pre">__version__</span></span><a class="headerlink" href="#xkcd.__version__" title="Permalink to this definition">¶</a></dt>
+<dd><p>A string representation of the version. e.g. <code class="docutils literal notranslate"><span class="pre">'0.0.1'</span></code>. This is based
+off of <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0440"><strong>PEP 440</strong></a>.</p>
+</dd></dl>
+
+</section>
+<section id="clients">
+<h2>Clients<a class="headerlink" href="#clients" title="Permalink to this headline">¶</a></h2>
+<section id="client">
+<h3>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h3>
+<div class="py-attribute-table" data-move-to-id="xkcd.Client"><div class="py-attribute-table-column">
+<span>
+Attributes</span><ul>
+<li class="py-attribute-table-entry">
+<a class="reference internal" href="#xkcd.Client.current">current</a></li><li class="py-attribute-table-entry">
+<a class="reference internal" href="#xkcd.Client.session">session</a></li></ul>
+</div><div class="py-attribute-table-column">
+<span>
+Methods</span><ul>
+<li class="py-attribute-table-entry">
+<span class="py-attribute-table-badge" title="method">
+def</span><a class="reference internal" href="#xkcd.Client.get">get</a></li><li class="py-attribute-table-entry">
+<span class="py-attribute-table-badge" title="method">
+def</span><a class="reference internal" href="#xkcd.Client.latest">latest</a></li><li class="py-attribute-table-entry">
+<span class="py-attribute-table-badge" title="method">
+def</span><a class="reference internal" href="#xkcd.Client.random">random</a></li></ul>
+</div></div><dl class="py class">
+<dt class="sig sig-object py" id="xkcd.Client">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xkcd.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><a class="headerlink" href="#xkcd.Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a client that can be used to interact with the xkcd API.
+This class is used to interact with the xkcd API.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xkcd.Client.session">
+<span class="sig-name descname"><span class="pre">session</span></span><a class="headerlink" href="#xkcd.Client.session" title="Permalink to this definition">¶</a></dt>
+<dd><p>The session used to make requests to the xkcd API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>httpx.Client</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xkcd.Client.current">
+<span class="sig-name descname"><span class="pre">current</span></span><a class="headerlink" href="#xkcd.Client.current" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current comic number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xkcd.Client.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comic</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xkcd.Client.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a comic from the xkcd API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>comic</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – The comic number to get.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#xkcd.Comic" title="xkcd.Comic">Comic</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xkcd.Client.latest">
+<span class="sig-name descname"><span class="pre">latest</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xkcd.Client.latest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the latest comic from the xkcd API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#xkcd.Comic" title="xkcd.Comic">Comic</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xkcd.Client.random">
+<span class="sig-name descname"><span class="pre">random</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xkcd.Client.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a random comic from the xkcd API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#xkcd.Comic" title="xkcd.Comic">Comic</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="asyncclient">
+<h3>AsyncClient<a class="headerlink" href="#asyncclient" title="Permalink to this headline">¶</a></h3>
+<div class="py-attribute-table" data-move-to-id="xkcd.AsyncClient"><div class="py-attribute-table-column">
+<span>
+Attributes</span><ul>
+<li class="py-attribute-table-entry">
+<a class="reference internal" href="#xkcd.AsyncClient.current">current</a></li><li class="py-attribute-table-entry">
+<a class="reference internal" href="#xkcd.AsyncClient.session">session</a></li></ul>
+</div><div class="py-attribute-table-column">
+<span>
+Methods</span><ul>
+<li class="py-attribute-table-entry">
+<span class="py-attribute-table-badge" title="method">
+def</span><a class="reference internal" href="#xkcd.AsyncClient.close">close</a></li><li class="py-attribute-table-entry">
+<span class="py-attribute-table-badge" title="coroutine">
+async</span><a class="reference internal" href="#xkcd.AsyncClient.get">get</a></li><li class="py-attribute-table-entry">
+<span class="py-attribute-table-badge" title="coroutine">
+async</span><a class="reference internal" href="#xkcd.AsyncClient.latest">latest</a></li><li class="py-attribute-table-entry">
+<span class="py-attribute-table-badge" title="coroutine">
+async</span><a class="reference internal" href="#xkcd.AsyncClient.random">random</a></li></ul>
+</div></div><dl class="py class">
+<dt class="sig sig-object py" id="xkcd.AsyncClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xkcd.</span></span><span class="sig-name descname"><span class="pre">AsyncClient</span></span><a class="headerlink" href="#xkcd.AsyncClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>An asynchronous version of the Client class.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xkcd.AsyncClient.session">
+<span class="sig-name descname"><span class="pre">session</span></span><a class="headerlink" href="#xkcd.AsyncClient.session" title="Permalink to this definition">¶</a></dt>
+<dd><p>The session used to make requests to the xkcd API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>httpx.AsyncClient</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xkcd.AsyncClient.current">
+<span class="sig-name descname"><span class="pre">current</span></span><a class="headerlink" href="#xkcd.AsyncClient.current" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current comic number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xkcd.AsyncClient.get">
+<em class="property"><span class="pre">await</span> </em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comic</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xkcd.AsyncClient.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a comic from the xkcd API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>comic</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – The comic number to get.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="#xkcd.Comic" title="xkcd.Comic">Comic</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xkcd.AsyncClient.latest">
+<em class="property"><span class="pre">await</span> </em><span class="sig-name descname"><span class="pre">latest</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xkcd.AsyncClient.latest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the latest comic from the xkcd API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#xkcd.Comic" title="xkcd.Comic">Comic</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xkcd.AsyncClient.random">
+<em class="property"><span class="pre">await</span> </em><span class="sig-name descname"><span class="pre">random</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xkcd.AsyncClient.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a random comic from the xkcd API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#xkcd.Comic" title="xkcd.Comic">Comic</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xkcd.AsyncClient.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xkcd.AsyncClient.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes the http session. Can be called manually, but is also called when the object is garbage collected.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="comic">
+<h2>Comic<a class="headerlink" href="#comic" title="Permalink to this headline">¶</a></h2>
+<div class="py-attribute-table" data-move-to-id="xkcd.Comic"><div class="py-attribute-table-column">
+<span>
+Attributes</span><ul>
+<li class="py-attribute-table-entry">
+<a class="reference internal" href="#xkcd.Comic.image">image</a></li><li class="py-attribute-table-entry">
+<a class="reference internal" href="#xkcd.Comic.num">num</a></li><li class="py-attribute-table-entry">
+<a class="reference internal" href="#xkcd.Comic.released">released</a></li><li class="py-attribute-table-entry">
+<a class="reference internal" href="#xkcd.Comic.title">title</a></li><li class="py-attribute-table-entry">
+<a class="reference internal" href="#xkcd.Comic.transcript">transcript</a></li></ul>
+</div></div><dl class="py class">
+<dt class="sig sig-object py" id="xkcd.Comic">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xkcd.</span></span><span class="sig-name descname"><span class="pre">Comic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xkcd.Comic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a xkcd comic.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xkcd.Comic.released">
+<span class="sig-name descname"><span class="pre">released</span></span><a class="headerlink" href="#xkcd.Comic.released" title="Permalink to this definition">¶</a></dt>
+<dd><p>The date the comic was released.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)">datetime.datetime</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xkcd.Comic.title">
+<span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#xkcd.Comic.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>The title of the comic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xkcd.Comic.num">
+<span class="sig-name descname"><span class="pre">num</span></span><a class="headerlink" href="#xkcd.Comic.num" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of the comic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xkcd.Comic.transcript">
+<span class="sig-name descname"><span class="pre">transcript</span></span><a class="headerlink" href="#xkcd.Comic.transcript" title="Permalink to this definition">¶</a></dt>
+<dd><p>The transcript of the comic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xkcd.Comic.image">
+<span class="sig-name descname"><span class="pre">image</span></span><a class="headerlink" href="#xkcd.Comic.image" title="Permalink to this definition">¶</a></dt>
+<dd><p>The image of the comic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#xkcd.Image" title="xkcd.Image">Image</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="image">
+<h2>Image<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h2>
+<div class="py-attribute-table" data-move-to-id="xkcd.Image"><div class="py-attribute-table-column">
+<span>
+Attributes</span><ul>
+<li class="py-attribute-table-entry">
+<a class="reference internal" href="#xkcd.Image.alt">alt</a></li><li class="py-attribute-table-entry">
+<a class="reference internal" href="#xkcd.Image.url">url</a></li></ul>
+</div></div><dl class="py class">
+<dt class="sig sig-object py" id="xkcd.Image">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xkcd.</span></span><span class="sig-name descname"><span class="pre">Image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xkcd.Image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents an image from the xkcd API.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xkcd.Image.url">
+<span class="sig-name descname"><span class="pre">url</span></span><a class="headerlink" href="#xkcd.Image.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>The URL of the image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xkcd.Image.alt">
+<span class="sig-name descname"><span class="pre">alt</span></span><a class="headerlink" href="#xkcd.Image.alt" title="Permalink to this definition">¶</a></dt>
+<dd><p>The alt text of the image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<p>The following exceptions are thrown by the library.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="xkcd.errors.XkcdError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xkcd.errors.</span></span><span class="sig-name descname"><span class="pre">XkcdError</span></span><a class="headerlink" href="#xkcd.errors.XkcdError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>Base class for exceptions in this module.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="xkcd.errors.InvalidComicError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xkcd.errors.</span></span><span class="sig-name descname"><span class="pre">InvalidComicError</span></span><a class="headerlink" href="#xkcd.errors.InvalidComicError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#xkcd.errors.XkcdError" title="xkcd.errors.XkcdError"><code class="xref py py-class docutils literal notranslate"><span class="pre">xkcd.errors.XkcdError</span></code></a></p>
+<p>Exception raised for errors caused by non-existent comics.</p>
+</dd></dl>
+
+<section id="exception-hierarchy">
+<h3>Exception Hierarchy<a class="headerlink" href="#exception-hierarchy" title="Permalink to this headline">¶</a></h3>
+<div class="exception-hierarchy-content">
+<ul class="simple">
+<li><dl class="simple">
+<dt><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.10)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a></dt><dd><ul>
+<li><dl class="simple">
+<dt><a class="reference internal" href="#xkcd.errors.XkcdError" title="xkcd.errors.XkcdError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">xkcd.errors.XkcdError</span></code></a></dt><dd><ul>
+<li><p><a class="reference internal" href="#xkcd.errors.InvalidComicError" title="xkcd.errors.InvalidComicError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">xkcd.errors.InvalidComicError</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+    </main>
+    <footer class="grid-item">
+        &#169; Copyright 2022, SomeHybrid.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </footer>
+  </div>
+
+  <div id="settings" class="modal" onclick="if (event.target == this){ settingsModal.close(); }" hidden>
+    <div class="modal-content">
+      <span class="close" onclick="settingsModal.close();" title="Close">
+        <span class="material-icons">close</span>
+      </span>
+      <h1>Settings</h1>
+
+      <h2>Font</h2>
+      <div class="setting">
+        <h3>Use a serif font:
+          <label class="toggle"
+            title="Use a serif font? Your system font will be used, falling back to serif.">
+            <input type="checkbox" name="useSerifFont" onclick="updateSetting(this);">
+            <span class="toggle-slider"></span>
+          </label>
+        </h3>
+      </div>
+
+      <h2>Theme</h2>
+      <div class="setting">
+        <h3>
+          <label class="toggle" title="Set your theme based on your system preferences">
+            <input type="radio" name="setTheme" onclick="updateSetting(this);" value="automatic" checked>
+          </label>
+          Automatic
+        </h3>
+        <h3>
+          <label class="toggle" title="Set your theme to light theme">
+            <input type="radio" name="setTheme" onclick="updateSetting(this);" value="light">
+          </label>
+          Light
+        </h3>
+        <h3>
+          <label class="toggle" title="Set your theme to dark theme">
+            <input type="radio" name="setTheme" onclick="updateSetting(this);" value="dark">
+          </label>
+          Dark
+        </h3>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="to-top" onclick="scrollToTop()" hidden>
+    <span><span class="material-icons">arrow_upward</span>to top</span>
+  </div>
+
+</body>
+</html>

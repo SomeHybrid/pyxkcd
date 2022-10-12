@@ -3,7 +3,8 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "xkcd.py"
+name = "pyxkcd"
+version = "0.1.0"
 description = "A simple, easy-to-use xkcd API wrapper!"
 readme = "README.md"
 requires-python = ">=3.7"
@@ -16,9 +17,11 @@ classifiers = [
 ]
 dependencies = [
     "httpx",
-    'importlib-metadata; python_version>"3.6"',
+    'importlib-metadata; python_version>="3.7"',
 ]
-dynamic = ["version"]
 
-[tool.setuptools.dynamic]
-version = {attr = "xkcd.__version__"}
+[project.urls]
+Homepage = "https://github.com/SomeHybrid/xkcd.py"
+
+[tool.setuptools.packages.find]
+include = ["xkcd*"]
