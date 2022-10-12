@@ -1,4 +1,4 @@
-# xkcd.py
+# pyxkcd
 
 A simple, easy-to-use xkcd wrapper
 
