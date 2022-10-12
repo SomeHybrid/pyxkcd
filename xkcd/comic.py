@@ -82,7 +82,7 @@ class Comic:
         return self.__transcript
 
     def __eq__(self, __o):
-        return self.json() == __o.json()
+        return self.response == __o.response
 
     def __dict__(self):
         return self.__response
