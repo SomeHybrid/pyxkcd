@@ -17,7 +17,7 @@ Version Related Info
     off of :pep:`440`.
 
 Clients
---------
+-------
 
 Client
 ~~~~~~~
@@ -36,7 +36,10 @@ AsyncClient
     :members:
 
 Comic
---------
+-----
+
+Comic
+~~~~~
 
 .. attributetable:: Comic
 
@@ -44,7 +47,10 @@ Comic
     :members:
 
 Image
---------
+-----
+
+Image
+~~~~~
 
 .. attributetable:: Image
 
